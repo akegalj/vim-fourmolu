@@ -26,7 +26,7 @@ function! vim_fourmolu#FourmoluWriteOn()
 endfunction
 
 function! vim_fourmolu#FourmoluWriteOff()
-    let g:fourmolu_write = 0 
+    let g:fourmolu_write = 0
 endfunction
 
 function! vim_fourmolu#FourmoluWriteToggle()
@@ -44,6 +44,7 @@ function! vim_fourmolu#FourmoluFmt() range
             silent exe "keepjumps " . a:firstline . "," . a:lastline
                 \ . "!" . g:fourmolu_executable
                 \ . g:fourmolu_quiet
+                \ . g:fourmolu_options
                 \ . s:Find_cabal()
 
             if (v:shell_error)

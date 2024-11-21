@@ -18,6 +18,10 @@ else
     let g:fourmolu_quiet = ""
 endif
 
+if !exists("g:fourmolu_options")
+    let g:fourmolu_options = ""
+endif
+
 command! -range=% FourmoluFmt exe "<line1>, <line2>call vim_fourmolu#FourmoluFmt()"
 command! FourmoluWriteOn exe "call vim_fourmolu#FourmoluWriteOn()"
 command! FourmoluWriteOff exe "call vim_fourmolu#FourmoluWriteOff()"
